@@ -1,3 +1,28 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+
 include ':app'
 include ':quiet'
-project(':quiet').projectDir = new File('../org.quietmodem.Quiet/quiet')
+project(':quiet').projectDir = new File('../QuietAndroid/quiet')
+//if using the original need this instead of the above
+//project(':quiet').projectDir = new File('../org.quietmodem.Quiet/quiet')
